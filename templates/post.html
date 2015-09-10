@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/post.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="text">
+            <a href="/">My Super Blog</a>
+        </h1>
+    </div>
+    <div class="detail">
+        <div class="post-head">
+            <h1 class="title"><a href="{% url 'post_page' id=post.id %}" {{ post.title }}</h1>
+            <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+        </div>
+        <div class="location">
+            <strong class="marker"></strong>
+            <span id="location-content">{{ post.location }}</span>
+        </div>
+        <div id="map-can" class="map"></div>
+        <div class="post-content">
+            {{ post.content }}
+        </div>
+        <hr class="line">
+        <img src="{{ post.photo }}" alt="" class="photo">
+    </div>
+</body>
+</html>
