@@ -7,7 +7,6 @@ from myblog.models import Post
 # Create your views here.
 
 def home(request):
-    #get all the posts
     post_list = Post.objects.all()
     return render_to_response('home.html',{'post_list':post_list})
 
